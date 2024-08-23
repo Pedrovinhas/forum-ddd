@@ -1,14 +1,18 @@
 export class Slug {
   public value: string
 
-  constructor(value: string) {
+  private constructor(value: string) {
     this.value = value
+  }
+
+  static create(value: string) {
+    return new Slug(value)
   }
 
   /**
    * Receives a string and normalize it as a slug.
    *
-   * Example: "An random title" => "an-random-title"
+   * Example: "An example title" => "an-example-title"
    *
    * @param text {string}
    */
